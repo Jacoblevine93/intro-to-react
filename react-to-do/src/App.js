@@ -31,6 +31,12 @@ class App extends Component {
     todo.isCompleted = todo.isCompleted ? false : true;
     this.setState({ todos: todos });
   }
+
+  deleteToDo() {
+    let updatedList = this.state.todos.filter(val => this.isCompleted = true);
+
+    this.setState({todos: [updatedList]});
+  }
  
   render() {
     return (
@@ -43,6 +49,7 @@ class App extends Component {
         <input type="text" value={ this.state.newTodoDescription } onChange={ (e) => this.handleChange(e) } />
         <input type="submit" />
       </form>
+      <button onClick={ () => this.deleteToDo()}>Delete</button>
       </ul>
       </div>
     );
