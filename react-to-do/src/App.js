@@ -33,9 +33,14 @@ class App extends Component {
   }
 
   deleteToDo() {
-    let updatedList = this.state.todos.filter(val => this.isCompleted = true);
+    let updatedList = this.state.todos.filter((val) => {
+        
+        return !val.isCompleted
+    });
 
-    this.setState({todos: [updatedList]});
+    this.setState({
+      todos: [...updatedList]
+    });
   }
  
   render() {
